@@ -1,0 +1,64 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const skillCategories = [
+  {
+    title: "Frontend",
+    skills: ["React", "Next.js", "TypeScript", "JavaScript", "jQuery", "HTML5", "CSS/SCSS", "Tailwind CSS", "Bootstrap", "Framer Motion", "MJML"],
+  },
+  {
+    title: "Backend & Data",
+    skills: ["Node.js", "Express", "REST APIs", "MySQL", "MongoDB", "Sequelize", "AWS Cognito", "Docker"],
+  },
+  {
+    title: "Tools & Workflow",
+    skills: ["Git", "GitHub", "Agile/Scrum", "JIRA", "Confluence", "Asana", "HubSpot", "Slate", "WCAG Accessibility", "SEO", "Vercel"],
+  },
+];
+
+export default function Skills() {
+  return (
+    <section id="skills" className="py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex items-center gap-4 mb-16"
+        >
+          <h2 className="text-3xl font-bold whitespace-nowrap">
+            <span className="font-mono text-xl mr-2 gradient-text">03.</span>
+            Skills & Tech
+          </h2>
+          <div className="h-px flex-1 max-w-xs bg-gradient-to-r from-border to-transparent" />
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {skillCategories.map((category, catIndex) => (
+            <motion.div
+              key={category.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: catIndex * 0.1 }}
+              className="p-6 rounded-xl bg-surface border border-border gradient-border glow"
+            >
+              <h3 className="font-mono text-sm mb-6 tracking-wider gradient-text">
+                {category.title}
+              </h3>
+              <ul className="space-y-3">
+                {category.skills.map((skill) => (
+                  <li key={skill} className="flex items-center gap-3 text-muted">
+                    <span className="text-accent-secondary text-xs">&#9656;</span>
+                    <span className="text-sm">{skill}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
