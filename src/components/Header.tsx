@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Projects", href: "#projects" },
@@ -86,40 +85,35 @@ export default function Header() {
       </nav>
 
       {/* Mobile menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden"
-          >
-            <ul className="flex flex-col items-center gap-6 py-8">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="text-lg text-muted hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-              <li>
-                <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-lg px-6 py-2 rounded-lg border border-accent text-accent hover:bg-accent hover:text-white transition-all"
-                >
-                  Resume
-                </a>
-              </li>
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div
+        className={`md:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden transition-all duration-300 ${
+          mobileOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0 border-b-0"
+        }`}
+      >
+        <ul className="flex flex-col items-center gap-6 py-8">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="text-lg text-muted hover:text-foreground transition-colors"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg px-6 py-2 rounded-lg border border-accent text-accent hover:bg-accent hover:text-white transition-all"
+            >
+              Resume
+            </a>
+          </li>
+        </ul>
+      </div>
     </header>
   );
 }

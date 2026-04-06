@@ -1,16 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
+import FadeIn from "@/components/FadeIn";
 
 export default function Contact() {
   return (
     <section id="contact" className="py-16 md:py-32">
       <div className="mx-auto max-w-2xl px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
+        <FadeIn>
           <p className="font-mono text-sm mb-4 gradient-text">05. What&apos;s Next?</p>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
           <p className="text-muted text-lg mb-4 leading-relaxed">
@@ -27,7 +23,7 @@ export default function Contact() {
           >
             Say Hello
           </a>
-        </motion.div>
+        </FadeIn>
       </div>
     </section>
   );

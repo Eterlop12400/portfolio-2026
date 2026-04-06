@@ -1,31 +1,21 @@
 "use client";
 
-import { motion } from "framer-motion";
+import FadeIn from "@/components/FadeIn";
 import Image from "next/image";
 
 export default function About() {
   return (
     <section id="about" className="py-16 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex items-center gap-4 mb-10 md:mb-16"
-        >
+        <FadeIn className="flex items-center gap-4 mb-10 md:mb-16">
           <h2 className="text-2xl md:text-3xl font-bold whitespace-nowrap">
             <span className="font-mono text-lg md:text-xl mr-2 gradient-text">04.</span>
             About Me
           </h2>
           <div className="h-px flex-1 max-w-xs bg-gradient-to-r from-border to-transparent" />
-        </motion.div>
+        </FadeIn>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12 items-start"
-        >
+        <FadeIn className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12 items-start">
           <div className="lg:col-span-3 space-y-4 text-muted leading-relaxed">
             <p>
               I&apos;m a full-stack developer who loves taking ideas and
@@ -65,7 +55,7 @@ export default function About() {
               <div className="absolute -inset-2 rounded-xl border-2 border-accent-secondary/20 -z-10 translate-x-3 translate-y-3 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300" />
             </div>
           </div>
-        </motion.div>
+        </FadeIn>
       </div>
     </section>
   );
