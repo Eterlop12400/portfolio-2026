@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import FadeIn from "@/components/FadeIn";
 import { projects } from "@/data/projects";
 import Image from "next/image";
 
@@ -12,22 +11,15 @@ function ProjectCard({
   project: (typeof projects)[0];
   index: number;
 }) {
-  const isEven = index % 2 === 0;
   const [activeImage, setActiveImage] = useState(0);
   const images = project.images ?? [{ src: project.image, label: project.title }];
 
   return (
-    <FadeIn
-      delay={index * 0.1}
-      margin="-100px"
-      className={`group relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${
-        !isEven ? "lg:direction-rtl" : ""
-      }`}
+    <div
+      className="group relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
     >
       {/* Image */}
-      <div
-        className={`relative ${!isEven ? "lg:order-2" : ""}`}
-      >
+      <div className="relative">
         <div className="relative aspect-video rounded-xl overflow-hidden border border-border bg-surface gradient-border">
           <div className="absolute inset-0 bg-accent/10 group-hover:bg-transparent transition-all duration-300 z-10" />
           <Image
@@ -36,6 +28,7 @@ function ProjectCard({
             fill
             className="object-contain"
             sizes="(max-width: 1024px) 100vw, 50vw"
+            priority={index === 0}
           />
         </div>
         {images.length > 1 && (
@@ -58,7 +51,7 @@ function ProjectCard({
       </div>
 
       {/* Content */}
-      <div className={!isEven ? "lg:order-1" : ""}>
+      <div>
         {project.featured && (
           <p className="font-mono text-sm gradient-text mb-2">Featured Project</p>
         )}
@@ -78,9 +71,7 @@ function ProjectCard({
             </ul>
           )}
         </div>
-        <div
-          className="flex flex-wrap gap-2 mb-6"
-        >
+        <div className="flex flex-wrap gap-2 mb-6">
           {project.tech.map((t) => (
             <span
               key={t}
@@ -90,9 +81,7 @@ function ProjectCard({
             </span>
           ))}
         </div>
-        <div
-          className="flex items-center gap-4"
-        >
+        <div className="flex items-center gap-4">
           {project.githubUrl && (
             <a
               href={project.githubUrl}
@@ -141,7 +130,7 @@ function ProjectCard({
           )}
         </div>
       </div>
-    </FadeIn>
+    </div>
   );
 }
 
@@ -149,13 +138,13 @@ export default function Projects() {
   return (
     <section id="projects" className="py-16 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
-        <FadeIn className="flex items-center gap-4 mb-10 md:mb-16">
+        <div className="flex items-center gap-4 mb-10 md:mb-16">
           <h2 className="text-2xl md:text-3xl font-bold whitespace-nowrap">
             <span className="font-mono text-lg md:text-xl mr-2 gradient-text">01.</span>
             Things I&apos;ve Built
           </h2>
           <div className="h-px flex-1 max-w-xs bg-gradient-to-r from-border to-transparent" />
-        </FadeIn>
+        </div>
 
         <div className="space-y-16 md:space-y-24">
           {projects
@@ -167,7 +156,7 @@ export default function Projects() {
 
         {/* Other projects */}
         {projects.some((p) => !p.featured) && (
-          <FadeIn className="mt-16 md:mt-24">
+          <div className="mt-16 md:mt-24">
             <h3 className="text-xl font-bold text-center mb-8">
               Other Projects
             </h3>
@@ -200,7 +189,7 @@ export default function Projects() {
                   </div>
                 ))}
             </div>
-          </FadeIn>
+          </div>
         )}
       </div>
     </section>
