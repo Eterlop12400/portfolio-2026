@@ -11,11 +11,11 @@ const jobs = [
     location: "Tampa, FL",
     range: "May 2023 — Present",
     bullets: [
-      "Develop and maintain responsive, accessible web pages and email templates using HTML, SCSS, MJML, and JavaScript",
-      "Transitioned marketing data and workflows from HubSpot to Slate",
-      "Collaborate on personalized, token-driven content across Slate campaigns",
-      "Optimize legacy code and build new components aligned with branding guidelines",
-      "Contribute to QA processes and troubleshoot cross-browser rendering issues",
+      "Build and maintain responsive web pages and email templates using HTML, SCSS, MJML, and JavaScript",
+      "Support Slate CRM workflows with dynamic, token-driven, and personalized content",
+      "Help transition marketing workflows and data processes from HubSpot to Slate",
+      "Troubleshoot rendering, data, and cross-browser issues across web and email experiences",
+      "Contribute to QA, legacy code updates, and new component development aligned with brand standards",
     ],
   },
   {
@@ -25,10 +25,10 @@ const jobs = [
     location: "Redwood City, CA",
     range: "Feb 2021 — May 2023",
     bullets: [
-      "Developed websites using HTML, CSS, JavaScript, jQuery, and related technologies",
-      "Translated design mockups into functional, responsive web interfaces",
-      "Tested and reviewed website designs for responsiveness and cross-browser compatibility",
-      "Collaborated with development teams using Agile methodologies",
+      "Built and maintained responsive web interfaces using HTML, CSS, JavaScript, and jQuery",
+      "Translated design mockups into functional, production-ready components",
+      "Tested and debugged cross-browser issues to ensure consistent user experience",
+      "Collaborated in Agile workflows to deliver client-facing features",
     ],
   },
 ];
@@ -37,16 +37,16 @@ export default function Experience() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="experience" className="py-24 md:py-32">
+    <section id="experience" className="py-16 md:py-32">
       <div className="mx-auto max-w-4xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex items-center gap-4 mb-16"
+          className="flex items-center gap-4 mb-10 md:mb-16"
         >
-          <h2 className="text-3xl font-bold whitespace-nowrap">
-            <span className="font-mono text-xl mr-2 gradient-text">02.</span>
+          <h2 className="text-2xl md:text-3xl font-bold whitespace-nowrap">
+            <span className="font-mono text-lg md:text-xl mr-2 gradient-text">02.</span>
             Where I&apos;ve Worked
           </h2>
           <div className="h-px flex-1 max-w-xs bg-gradient-to-r from-border to-transparent" />

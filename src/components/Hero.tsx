@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-grid overflow-hidden">
+    <section className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center bg-grid overflow-hidden">
       {/* Animated gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="orb absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-accent/[0.07] blur-[120px]" />
         <div className="orb-delayed absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-accent-secondary/[0.05] blur-[120px]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+      <div className="relative z-10 mx-auto max-w-4xl px-6 pt-16 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

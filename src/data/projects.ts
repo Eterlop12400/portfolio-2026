@@ -4,7 +4,8 @@ export interface Project {
   longDescription: string;
   tech: string[];
   image: string;
-  images?: { src: string; label: string; url?: string }[];
+  images?: { src: string; label: string; url?: string; description?: string }[];
+  highlights?: string[];
   liveUrl?: string;
   githubUrl?: string;
   featured: boolean;
@@ -14,7 +15,7 @@ export const projects: Project[] = [
   {
     title: "PrimalMarket",
     description:
-      "Designed and architected a peer-to-peer marketplace for trading card singles from the ground up. Defined the data models, transaction flow with escrow protection, and the full buyer/seller experience — from listing creation to secure checkout with tracked shipping. Also built a full admin dashboard with analytics graphs and a CMS for managing platform content. Led all product and UX decisions, focused on making complex transaction states feel simple.",
+      "Built a full-stack peer-to-peer marketplace for trading card sales with the Primal TCG team. Designed and implemented the full transaction flow from listings to checkout, including Stripe and PayPal payments and an escrow system that protects both buyers and sellers. Also developed internal tools so the team can manage the platform without engineering support.",
     longDescription: "",
     tech: [
       "React",
@@ -23,7 +24,16 @@ export const projects: Project[] = [
       "MongoDB",
       "REST API",
       "AWS Cognito",
-      "Escrow System",
+      "Stripe",
+      "PayPal",
+    ],
+    highlights: [
+      "Designed MongoDB schema for listings, transactions, escrow state, and shipping workflows",
+      "Built multi-item cart and checkout with Stripe and PayPal integration",
+      "Implemented escrow system that holds funds on purchase and auto-releases after 14 days",
+      "Created admin dashboard with sales analytics, user moderation, and CMS tools",
+      "Developed buyer/seller messaging system tied to active transactions",
+      "Used AI-assisted tools to accelerate development and debugging",
     ],
     image: "/images/primalmarket.png",
     liveUrl: "https://marketplace.primaltcg.com/",
@@ -32,21 +42,30 @@ export const projects: Project[] = [
   {
     title: "PrimalTCG",
     description:
-      "Architected a community platform used by Primal TCG's active player base. Designed the card database schema, a multi-filter search system (element, rarity, type, turn count, text), and a deck builder with real-time validation, public/private sharing, and breakdown analytics. Drove all product and design decisions.",
+      "Built key features for the Primal TCG community platform alongside the team. The two biggest pieces were a card search system and a deck builder — both used daily by the player base.",
     longDescription: "",
     tech: [
       "React",
       "Node.js",
       "Express",
-      "MySQL",
-      "Sequelize",
+      "MongoDB",
       "REST API",
       "Data Modeling",
     ],
     image: "/images/primaltcg.png",
     images: [
-      { src: "/images/primaltcg.png", label: "Card Search", url: "https://primaltcg.com/search" },
-      { src: "/images/primaltcg-deckbuilder.png", label: "Deck Builder", url: "https://primaltcg.com/build" },
+      {
+        src: "/images/primaltcg.png",
+        label: "Card Search",
+        url: "https://primaltcg.com/search",
+        description: "Built the card database schema and a multi-filter search system — players can filter by element, rarity, type, turn count, and text to find any card in the library. Built with the Primal TCG team.",
+      },
+      {
+        src: "/images/primaltcg-deckbuilder.png",
+        label: "Deck Builder",
+        url: "https://primaltcg.com/build",
+        description: "A deck builder with real-time validation, public/private sharing, and breakdown analytics. Players can build, tweak, and share decks with the community. Built with the Primal TCG team.",
+      },
     ],
     liveUrl: "https://primaltcg.com/search",
     featured: true,
@@ -54,7 +73,7 @@ export const projects: Project[] = [
   {
     title: "Jackson Transformer",
     description:
-      "Designed and built a modern, SEO-optimized business site for an electrical transformer manufacturer. Features product galleries with detailed specs, interactive before/after repair sliders, structured data for search engines, and a multi-step quote request form. Achieved 96+ Lighthouse scores across all categories.",
+      "Built a modern business site for an electrical transformer manufacturer. Includes product galleries with specs, interactive before/after repair sliders, structured data for SEO, and a multi-step quote request form. Scores 96+ on Lighthouse across the board.",
     longDescription: "",
     tech: [
       "Next.js",

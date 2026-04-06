@@ -36,7 +36,7 @@ function ProjectCard({
             src={images[activeImage].src}
             alt={`${project.title} - ${images[activeImage].label}`}
             fill
-            className="object-cover object-top"
+            className="object-contain"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
         </div>
@@ -60,18 +60,28 @@ function ProjectCard({
       </div>
 
       {/* Content */}
-      <div className={!isEven ? "lg:order-1 lg:text-right" : ""}>
+      <div className={!isEven ? "lg:order-1" : ""}>
         {project.featured && (
           <p className="font-mono text-sm gradient-text mb-2">Featured Project</p>
         )}
         <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
         <div className="p-5 rounded-xl bg-surface border border-border mb-4">
-          <p className="text-muted leading-relaxed">{project.description}</p>
+          <p className="text-muted leading-relaxed">
+            {images[activeImage].description || project.description}
+          </p>
+          {project.highlights && project.highlights.length > 0 && (
+            <ul className="mt-4 grid grid-cols-1 gap-y-1.5 text-sm text-muted">
+              {project.highlights.map((h) => (
+                <li key={h} className="flex items-baseline gap-2">
+                  <span className="text-accent text-xs shrink-0">&#9654;</span>
+                  <span>{h}</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
         <div
-          className={`flex flex-wrap gap-2 mb-6 ${
-            !isEven ? "lg:justify-end" : ""
-          }`}
+          className="flex flex-wrap gap-2 mb-6"
         >
           {project.tech.map((t) => (
             <span
@@ -83,9 +93,7 @@ function ProjectCard({
           ))}
         </div>
         <div
-          className={`flex items-center gap-4 ${
-            !isEven ? "lg:justify-end" : ""
-          }`}
+          className="flex items-center gap-4"
         >
           {project.githubUrl && (
             <a
@@ -141,22 +149,22 @@ function ProjectCard({
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 md:py-32">
+    <section id="projects" className="py-16 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex items-center gap-4 mb-16"
+          className="flex items-center gap-4 mb-10 md:mb-16"
         >
-          <h2 className="text-3xl font-bold whitespace-nowrap">
-            <span className="font-mono text-xl mr-2 gradient-text">01.</span>
+          <h2 className="text-2xl md:text-3xl font-bold whitespace-nowrap">
+            <span className="font-mono text-lg md:text-xl mr-2 gradient-text">01.</span>
             Things I&apos;ve Built
           </h2>
           <div className="h-px flex-1 max-w-xs bg-gradient-to-r from-border to-transparent" />
         </motion.div>
 
-        <div className="space-y-24">
+        <div className="space-y-16 md:space-y-24">
           {projects
             .filter((p) => p.featured)
             .map((project, i) => (
@@ -170,7 +178,7 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-24"
+            className="mt-16 md:mt-24"
           >
             <h3 className="text-xl font-bold text-center mb-8">
               Other Projects

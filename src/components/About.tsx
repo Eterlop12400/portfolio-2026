@@ -5,16 +5,16 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className="py-24 md:py-32">
+    <section id="about" className="py-16 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex items-center gap-4 mb-16"
+          className="flex items-center gap-4 mb-10 md:mb-16"
         >
-          <h2 className="text-3xl font-bold whitespace-nowrap">
-            <span className="font-mono text-xl mr-2 gradient-text">04.</span>
+          <h2 className="text-2xl md:text-3xl font-bold whitespace-nowrap">
+            <span className="font-mono text-lg md:text-xl mr-2 gradient-text">04.</span>
             About Me
           </h2>
           <div className="h-px flex-1 max-w-xs bg-gradient-to-r from-border to-transparent" />
@@ -24,13 +24,13 @@ export default function About() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start"
+          className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12 items-start"
         >
           <div className="lg:col-span-3 space-y-4 text-muted leading-relaxed">
             <p>
               I&apos;m a full-stack developer who loves taking ideas and
               turning them into real, working products. I can work across the
-              entire stack, but my sweet spot is the frontend — I get the most
+              entire stack, but my sweet spot is the frontend. I get the most
               energy from crafting interfaces that feel intuitive and bringing
               a vision to life in the browser.
             </p>
@@ -39,9 +39,9 @@ export default function About() {
               <span className="text-accent-light">React</span>,{" "}
               <span className="text-accent-light">Next.js</span>, and{" "}
               <span className="text-accent-light">Node.js</span>. I&apos;ve
-              built everything from marketplace platforms to community tools
-              to business sites — always focused on clean design and a
-              great user experience.
+              built everything from marketplace platforms with payments and
+              escrow systems to internal tools and business websites —
+              always focused on clean design and a great user experience.
             </p>
             <p>
               When I&apos;m not coding, I&apos;m probably deep in the
@@ -53,7 +53,7 @@ export default function About() {
           {/* Photo placeholder */}
           <div className="lg:col-span-2 flex justify-center">
             <div className="relative group">
-              <div className="relative w-64 h-64 rounded-xl overflow-hidden border-2 border-border group-hover:border-accent-light transition-colors duration-300">
+              <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-xl overflow-hidden border-2 border-border group-hover:border-accent-light transition-colors duration-300">
                 <Image
                   src="/images/headshot.jpg"
                   alt="Eric Terlop"
