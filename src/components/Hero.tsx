@@ -2,6 +2,11 @@
 
 import { motion } from "framer-motion";
 
+const fadeUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+};
+
 export default function Hero() {
   return (
     <section className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center bg-grid overflow-hidden">
@@ -13,9 +18,9 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 pt-16 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          {...fadeUp}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          style={{ willChange: "opacity, transform" }}
         >
           <p className="font-mono text-sm text-accent-light mb-4 tracking-wider">
             Hi, my name is
@@ -23,27 +28,24 @@ export default function Hero() {
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+          {...fadeUp}
+          transition={{ duration: 0.5, delay: 0.08, ease: "easeOut" }}
           className="text-5xl md:text-7xl font-bold tracking-tight mb-4"
         >
           Eric Terlop<span className="gradient-text">.</span>
         </motion.h1>
 
         <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          {...fadeUp}
+          transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
           className="text-2xl md:text-4xl font-bold text-muted mb-8"
         >
           I build things for the web.
         </motion.h2>
 
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+          {...fadeUp}
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           className="max-w-xl mx-auto text-muted text-lg mb-12 leading-relaxed"
         >
           Full-stack developer who loves turning ideas into real, polished
@@ -52,9 +54,8 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35, ease: "easeOut" }}
+          {...fadeUp}
+          transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
           className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-10 font-mono text-sm"
         >
           <span className="text-muted"><span className="gradient-text font-bold">4+</span> years experience</span>
@@ -65,9 +66,8 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.45, ease: "easeOut" }}
+          {...fadeUp}
+          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
@@ -87,7 +87,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
           className="flex items-center justify-center gap-5 mt-10"
         >
           <a
@@ -119,7 +119,7 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
+        transition={{ delay: 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
         aria-hidden="true"
       >

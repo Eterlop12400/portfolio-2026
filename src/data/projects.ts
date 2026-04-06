@@ -35,7 +35,7 @@ export const projects: Project[] = [
       "Developed buyer/seller messaging system tied to active transactions",
       "Used AI-assisted tools to accelerate development and debugging",
     ],
-    image: "/images/primalmarket.png",
+    image: "/images/primalmarket.webp",
     liveUrl: "https://marketplace.primaltcg.com/",
     featured: true,
   },
@@ -52,16 +52,16 @@ export const projects: Project[] = [
       "REST API",
       "Data Modeling",
     ],
-    image: "/images/primaltcg.png",
+    image: "/images/primaltcg.webp",
     images: [
       {
-        src: "/images/primaltcg.png",
+        src: "/images/primaltcg.webp",
         label: "Card Search",
         url: "https://primaltcg.com/search",
         description: "Built the card database schema and a multi-filter search system — players can filter by element, rarity, type, turn count, and text to find any card in the library. Built with the Primal TCG team.",
       },
       {
-        src: "/images/primaltcg-deckbuilder.png",
+        src: "/images/primaltcg-deckbuilder.webp",
         label: "Deck Builder",
         url: "https://primaltcg.com/build",
         description: "A deck builder with real-time validation, public/private sharing, and breakdown analytics. Players can build, tweak, and share decks with the community. Built with the Primal TCG team.",
@@ -82,7 +82,7 @@ export const projects: Project[] = [
       "Framer Motion",
       "SEO",
     ],
-    image: "/images/jackson.png",
+    image: "/images/jackson.webp",
     featured: true,
   },
   {
