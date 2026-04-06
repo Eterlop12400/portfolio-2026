@@ -22,7 +22,24 @@ export const metadata: Metadata = {
     description:
       "Full-stack developer specializing in React, Node.js, and modern web applications.",
     type: "website",
+    url: "https://ericterlop.com",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Eric Terlop - Full-Stack Developer",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Eric Terlop | Full-Stack Developer",
+    description:
+      "Full-stack developer specializing in React, Node.js, and modern web applications.",
+    images: ["/images/og-image.png"],
+  },
+  metadataBase: new URL("https://ericterlop.com"),
 };
 
 export default function RootLayout({

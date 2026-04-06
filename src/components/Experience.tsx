@@ -59,10 +59,14 @@ export default function Experience() {
           className="flex flex-col md:flex-row gap-0"
         >
           {/* Tabs */}
-          <div className="flex md:flex-col border-b md:border-b-0 md:border-l border-border">
+          <div role="tablist" aria-label="Work experience" className="flex md:flex-col border-b md:border-b-0 md:border-l border-border">
             {jobs.map((job, i) => (
               <button
                 key={job.shortName}
+                role="tab"
+                aria-selected={i === activeTab}
+                aria-controls={`tabpanel-${i}`}
+                id={`tab-${i}`}
                 onClick={() => setActiveTab(i)}
                 className={`px-5 py-3 text-sm font-mono text-left whitespace-nowrap transition-all ${
                   i === activeTab
@@ -76,7 +80,7 @@ export default function Experience() {
           </div>
 
           {/* Content */}
-          <div className="pt-6 md:pt-0 md:pl-8 min-h-[320px]">
+          <div role="tabpanel" id={`tabpanel-${activeTab}`} aria-labelledby={`tab-${activeTab}`} className="pt-6 md:pt-0 md:pl-8 min-h-[320px]">
             <h3 className="text-xl font-bold mb-1">
               {jobs[activeTab].title}{" "}
               <span className="gradient-text">@ {jobs[activeTab].company}</span>

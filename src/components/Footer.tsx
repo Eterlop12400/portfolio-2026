@@ -41,7 +41,7 @@ export default function Footer() {
               </svg>
             </a>
           </div>
-          <p className="text-xs text-muted/60 font-mono">
+          <p className="text-xs text-muted font-mono">
             Built by Eric Terlop
           </p>
         </div>

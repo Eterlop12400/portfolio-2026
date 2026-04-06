@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center bg-grid overflow-hidden">
       {/* Animated gradient orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="orb absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-accent/[0.07] blur-[120px]" />
         <div className="orb-delayed absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-accent-secondary/[0.05] blur-[120px]" />
       </div>
@@ -121,6 +121,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        aria-hidden="true"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}

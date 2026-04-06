@@ -65,7 +65,7 @@ function ProjectCard({
           <p className="font-mono text-sm gradient-text mb-2">Featured Project</p>
         )}
         <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-        <div className="p-5 rounded-xl bg-surface border border-border mb-4">
+        <div className="p-5 rounded-xl bg-surface border border-border mb-4" aria-live="polite">
           <p className="text-muted leading-relaxed">
             {images[activeImage].description || project.description}
           </p>
