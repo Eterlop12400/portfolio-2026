@@ -126,6 +126,33 @@ button:focus-visible {
   background-size: 64px 64px;
 }
 
+/* Hero fade-up animation (CSS-driven for fast LCP) */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero-fade-up {
+  animation: fadeUp 0.5s ease-out backwards;
+}
+
+.hero-fade-up-1 { animation-delay: 0s; }
+.hero-fade-up-2 { animation-delay: 0.08s; }
+.hero-fade-up-3 { animation-delay: 0.15s; }
+.hero-fade-up-4 { animation-delay: 0.2s; }
+.hero-fade-up-5 { animation-delay: 0.25s; }
+.hero-fade-up-6 { animation-delay: 0.3s; }
+
+.hero-fade-in {
+  animation: fadeIn 0.5s ease-out backwards;
+  animation-delay: 0.4s;
+}
+
 /* Animated gradient orb for hero */
 @keyframes float {
   0%, 100% { transform: translate(0, 0) scale(1); }
@@ -139,6 +166,12 @@ button:focus-visible {
 
 .orb-delayed {
   animation: float 10s ease-in-out infinite reverse;
+}
+
+/* Scroll indicator bounce */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
 }
 
 /* Respect reduced motion preferences */

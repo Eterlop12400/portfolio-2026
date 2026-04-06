@@ -1,12 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-
-const fadeUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-};
-
 export default function Hero() {
   return (
     <section className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center bg-grid overflow-hidden">
@@ -17,59 +8,33 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 pt-16 text-center">
-        <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          style={{ willChange: "opacity, transform" }}
-        >
-          <p className="font-mono text-sm text-accent-light mb-4 tracking-wider">
-            Hi, my name is
-          </p>
-        </motion.div>
+        <p className="font-mono text-sm text-accent-light mb-4 tracking-wider">
+          Hi, my name is
+        </p>
 
-        <motion.h1
-          {...fadeUp}
-          transition={{ duration: 0.5, delay: 0.08, ease: "easeOut" }}
-          className="text-5xl md:text-7xl font-bold tracking-tight mb-4"
-        >
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4">
           Eric Terlop<span className="gradient-text">.</span>
-        </motion.h1>
+        </h1>
 
-        <motion.h2
-          {...fadeUp}
-          transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
-          className="text-2xl md:text-4xl font-bold text-muted mb-8"
-        >
+        <h2 className="text-2xl md:text-4xl font-bold text-muted mb-8">
           I build things for the web.
-        </motion.h2>
+        </h2>
 
-        <motion.p
-          {...fadeUp}
-          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-          className="max-w-xl mx-auto text-muted text-lg mb-12 leading-relaxed"
-        >
+        <p className="max-w-xl mx-auto text-muted text-lg mb-12 leading-relaxed">
           Full-stack developer who loves turning ideas into real, polished
           products. I work across the stack but I&apos;m most at home on the
           frontend — making things look right, feel right, and just work.
-        </motion.p>
+        </p>
 
-        <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
-          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-10 font-mono text-sm"
-        >
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-10 font-mono text-sm">
           <span className="text-muted"><span className="gradient-text font-bold">4+</span> years experience</span>
           <span className="text-border hidden sm:inline">|</span>
           <span className="text-muted"><span className="gradient-text font-bold">B.S.</span> Web Development</span>
           <span className="text-border hidden sm:inline">|</span>
           <span className="text-muted"><span className="gradient-text font-bold">4.0</span> GPA · Valedictorian</span>
-        </motion.div>
+        </div>
 
-        <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#projects"
             className="px-8 py-3 rounded-lg btn-gradient text-white font-medium"
@@ -82,14 +47,9 @@ export default function Hero() {
           >
             Get In Touch
           </a>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
-          className="flex items-center justify-center gap-5 mt-10"
-        >
+        <div className="hero-fade-in flex items-center justify-center gap-5 mt-10">
           <a
             href="https://github.com/Eterlop12400"
             target="_blank"
@@ -112,25 +72,21 @@ export default function Hero() {
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
             </svg>
           </a>
-        </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      <div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hero-fade-in"
         aria-hidden="true"
       >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        <div
           className="w-5 h-8 rounded-full border-2 border-muted/40 flex items-start justify-center p-1"
+          style={{ animation: "scrollBounce 2s ease-in-out infinite" }}
         >
           <div className="w-1 h-2 rounded-full bg-muted/60" />
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 }
