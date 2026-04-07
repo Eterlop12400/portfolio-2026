@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import FadeIn from "@/components/FadeIn";
 import { projects } from "@/data/projects";
 import Image from "next/image";
 
@@ -15,7 +16,9 @@ function ProjectCard({
   const images = project.images ?? [{ src: project.image, label: project.title }];
 
   return (
-    <div
+    <FadeIn
+      delay={index * 0.1}
+      margin="-100px"
       className="group relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
     >
       {/* Image */}
@@ -130,7 +133,7 @@ function ProjectCard({
           )}
         </div>
       </div>
-    </div>
+    </FadeIn>
   );
 }
 
@@ -138,13 +141,13 @@ export default function Projects() {
   return (
     <section id="projects" className="py-16 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="flex items-center gap-4 mb-10 md:mb-16">
+        <FadeIn className="flex items-center gap-4 mb-10 md:mb-16">
           <h2 className="text-2xl md:text-3xl font-bold whitespace-nowrap">
             <span className="font-mono text-lg md:text-xl mr-2 gradient-text">01.</span>
             Things I&apos;ve Built
           </h2>
           <div className="h-px flex-1 max-w-xs bg-gradient-to-r from-border to-transparent" />
-        </div>
+        </FadeIn>
 
         <div className="space-y-16 md:space-y-24">
           {projects
@@ -154,9 +157,8 @@ export default function Projects() {
             ))}
         </div>
 
-        {/* Other projects */}
         {projects.some((p) => !p.featured) && (
-          <div className="mt-16 md:mt-24">
+          <FadeIn className="mt-16 md:mt-24">
             <h3 className="text-xl font-bold text-center mb-8">
               Other Projects
             </h3>
@@ -189,7 +191,7 @@ export default function Projects() {
                   </div>
                 ))}
             </div>
-          </div>
+          </FadeIn>
         )}
       </div>
     </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import FadeIn from "@/components/FadeIn";
 
 const jobs = [
   {
@@ -38,15 +39,15 @@ export default function Experience() {
   return (
     <section id="experience" className="py-16 md:py-32">
       <div className="mx-auto max-w-4xl px-6">
-        <div className="flex items-center gap-4 mb-10 md:mb-16">
+        <FadeIn className="flex items-center gap-4 mb-10 md:mb-16">
           <h2 className="text-2xl md:text-3xl font-bold whitespace-nowrap">
             <span className="font-mono text-lg md:text-xl mr-2 gradient-text">02.</span>
             Where I&apos;ve Worked
           </h2>
           <div className="h-px flex-1 max-w-xs bg-gradient-to-r from-border to-transparent" />
-        </div>
+        </FadeIn>
 
-        <div className="flex flex-col md:flex-row gap-0">
+        <FadeIn className="flex flex-col md:flex-row gap-0">
           <div role="tablist" aria-label="Work experience" className="flex md:flex-col border-b md:border-b-0 md:border-l border-border">
             {jobs.map((job, i) => (
               <button
@@ -84,7 +85,7 @@ export default function Experience() {
               ))}
             </ul>
           </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );
